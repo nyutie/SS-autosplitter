@@ -79,7 +79,6 @@ update
 
 start
 {
-    print(current.isOnMainMenu.ToString() + old.isOnMainMenu.ToString() + (vars.campaignLevelReferenceString == vars.MapReferences[0]));
     if (!current.isOnMainMenu && vars.campaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer == 0f)
     {
         vars.CurrentMapIndex = 0;
@@ -114,7 +113,6 @@ reset
 // {
 //     if (!current.isOnMainMenu && current.levelTimer == old.levelTimer)
 //     {
-//         print("Game is loading (or paused)+!!");
 //         return true;
 //     }
 //     return false;
