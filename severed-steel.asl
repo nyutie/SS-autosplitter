@@ -122,5 +122,3 @@ gameTime
 {
     return TimeSpan.FromSeconds(current.fullTimer);
 }
-
-// CurrentCampaignAsset - important, find memory region by doing a string search for this
