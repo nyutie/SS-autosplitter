@@ -4,7 +4,7 @@
 state("ThankYouVeryCool-Win64-Shipping", "4.27.2.0") {
     // float levelTimer: 0x05B0F540, 0x118, 0xB54;
     float fullTimer: 0x05B0F540, 0x118, 0xB58;
-    bool isOnMainMenu: 0x05935BC0, 0x18, 0x48; // alt 0x05AA1660, 0x118, 0x5E8, 0x110
+    bool isOnMainMenu: 0x05935BC0, 0x8D0, 0x0, 0x16B0, 0xD8; // now actually bool for is on main menu instead of is decoding video
 }
 
 init
