@@ -109,14 +109,14 @@ reset
     }
 }
 
-// isLoading
-// {
-//     if (!current.isOnMainMenu && current.levelTimer == old.levelTimer)
-//     {
-//         return true;
-//     }
-//     return false;
-// }
+isLoading
+{
+    if (!current.isOnMainMenu && current.fullTimer == old.fullTimer)
+    {
+        return true;
+    }
+    return false;
+}
 
 gameTime
 {
