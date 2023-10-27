@@ -1,19 +1,19 @@
 // autosplitter and layout by nyutie
 // first time doin any of this :3_:
 
-state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards steam dx11") {
+state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards steam") {
     // float levelTimer: 0x5B0F540, 0x118, 0xB54;
     float fullTimer: 0x5B0F540, 0x118, 0xB58;
     bool isOnMainMenu: 0x59C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
 }
 
-state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards epic dx12") {
+state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards epic") {
     // float levelTimer: 0x5DC0380, 0x118, 0xB54;
     float fullTimer: 0x5DC0380, 0x118, 0xB58;
     bool isOnMainMenu: 0x5D52E90, 0x30, 0x60, 0x560, 0x320;
 }
 
-state("ThankYouVeryCool-Win64-Shipping", "firefight2 steam dx11 patch 1") {
+state("ThankYouVeryCool-Win64-Shipping", "firefight2 steam patch 1") {
     // float levelTimer: 0x5B19140, 0x118, 0xB64;
     float fullTimer: 0x5B19140, 0x118, 0xB68;
     bool isOnMainMenu: 0x59D1AE0, 0x2190, 0x0, 0xEA0, 0x27C;
@@ -92,15 +92,15 @@ init
     print("Base address: " + (long)modules.First().BaseAddress);
     switch ((long)modules.First().BaseAddress) {
         case 0x7FF70E3D0000:
-            version = "oldleaderboards steam dx11";
+            version = "oldleaderboards steam";
             vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
             break;
         case 0x7FF783760000:
-            version = "oldleaderboards epic dx12";
+            version = "oldleaderboards epic";
             vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
             break;
         case 0x7FF610F50000:
-            version = "firefight2 steam dx11 patch 1";
+            version = "firefight2 steam patch 1";
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
