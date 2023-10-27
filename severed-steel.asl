@@ -1,20 +1,40 @@
 // autosplitter and layout by nyutie
 // first time doin any of this :3_:
 
-state("ThankYouVeryCool-Win64-Shipping", "4.27.2.0") {
-    // float levelTimer: 0x05B0F540, 0x118, 0xB54;
-    float fullTimer: 0x05B0F540, 0x118, 0xB58;
-    bool isOnMainMenu: 0x059C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8; // now actually bool for is on main menu instead of is decoding video
+state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards steam") {
+    // float levelTimer: 0x5B0F540, 0x118, 0xB54;
+    float fullTimer: 0x5B0F540, 0x118, 0xB58;
+    bool isOnMainMenu: 0x59C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
 }
 
-init
-{
-    vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
+state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards epic") {
+    // float levelTimer: 0x5DC0380, 0x118, 0xB54;
+    float fullTimer: 0x5DC0380, 0x118, 0xB58;
+    bool isOnMainMenu: 0x5D52E90, 0x30, 0x60, 0x560, 0x320;
 }
+
+// state("ThankYouVeryCool-Win64-Shipping", "newleaderboards 1.0") {
+//     // float levelTimer: 0x05B0F540, 0x118, 0xB54;
+//     float fullTimer: 0x05B0F540, 0x118, 0xB58;
+//     bool isOnMainMenu: 0x059C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
+// }
 
 startup
 {
-    vars.MapReferences = new List<string>() {
+    if(timer.CurrentTimingMethod == TimingMethod.RealTime) // copied this from somewhere lmao
+    {
+        var timingMessage = MessageBox.Show(
+            "This game uses Game Time (time without loads) as the main timing method.\n"+
+            "LiveSplit is currently set to show Real Time (time INCLUDING loads).\n"+
+            "Would you like the timing method to be set to Game Time for you?",
+            vars.aslName+" | LiveSplit",
+            MessageBoxButtons.YesNo,MessageBoxIcon.Question
+        );
+        if (timingMessage == DialogResult.Yes) timer.CurrentTimingMethod = TimingMethod.GameTime;
+	}
+
+    vars.MapReferences = new List<string>()
+    {
         "/Game/Campaign/Trash/CDA_Trash.CDA_Trash_C",
         "/Game/Campaign/TrashDiveTut/CDA_TrashDive.CDA_TrashDive_C",
         "/Game/Campaign/AboveTrash/CDA_AboveTrash.CDA_AboveTrash_C",
@@ -67,11 +87,40 @@ startup
     vars.CurrentMapIndex = -2;
 }
 
+init
+{
+    switch ((long)modules.First().BaseAddress) {
+        case 0x7FF70E3D0000:
+            version = "oldleaderboards steam";
+            vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case 0x7FF783760000:
+            version = "oldleaderboards epic";
+            vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
+            break;
+        // case 0x1:
+        //     version = "newleaderboards steam 1.0";
+        //     vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
+        //     break;
+        default:
+            MessageBox.Show(
+                "Unsupported version of the game! If you're on GOG, sorry, I don't have it.\n" +
+                "If you're on Steam/Epic, I'm probably already working on the update!\n\n" +
+                "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.",
+                "SS-autosplitter", // caption
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning
+            );
+            return false; // stops update
+    }
+}
+
 update
 {
     IntPtr resolvedSavePath = IntPtr.Zero;
     vars.SaveOffsetPath.DerefOffsets(game, out resolvedSavePath);
     vars.SaveOffset = resolvedSavePath;
+
     IntPtr saveOffset = vars.SaveOffset;
     int campaignLevelReferenceStringLength = game.ReadValue<int>(saveOffset + 130);
     vars.campaignLevelReferenceString = game.ReadString(saveOffset + 130 + 4, campaignLevelReferenceStringLength);
