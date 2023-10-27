@@ -150,7 +150,7 @@ split
         vars.CurrentMapIndex = nowCurrentMapIndex;
         return true;
     }
-    if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == old.fullTimer) // last map
+    else if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == old.fullTimer) // last map
     {
         return true;
     }
