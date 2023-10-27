@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Layout version="1.6.1">
   <Mode>Vertical</Mode>
-  <X>-518</X>
-  <Y>508</Y>
-  <VerticalWidth>286</VerticalWidth>
-  <VerticalHeight>309</VerticalHeight>
+  <X>-454</X>
+  <Y>58</Y>
+  <VerticalWidth>325</VerticalWidth>
+  <VerticalHeight>317</VerticalHeight>
   <HorizontalWidth>-1</HorizontalWidth>
   <HorizontalHeight>-1</HorizontalHeight>
   <Settings>
@@ -107,7 +107,7 @@
             <Name>+/-</Name>
             <Type>Delta</Type>
             <Comparison>Current Comparison</Comparison>
-            <TimingMethod>Real Time</TimingMethod>
+            <TimingMethod>Current Timing Method</TimingMethod>
           </Settings>
           <Settings>
             <Version>1.5</Version>
