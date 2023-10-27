@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Layout version="1.6.1">
   <Mode>Vertical</Mode>
-  <X>-672</X>
-  <Y>192</Y>
+  <X>-518</X>
+  <Y>508</Y>
   <VerticalWidth>286</VerticalWidth>
   <VerticalHeight>309</VerticalHeight>
   <HorizontalWidth>-1</HorizontalWidth>
@@ -158,7 +158,7 @@
       <Path>LiveSplit.ScriptableAutoSplit.dll</Path>
       <Settings>
         <Version>1.5</Version>
-        <ScriptPath>.\severed-steel.asl</ScriptPath>
+        <ScriptPath>G:\GitHub\SS-autosplitter\severed-steel.asl</ScriptPath>
         <Start>True</Start>
         <Reset>True</Reset>
         <Split>True</Split>
