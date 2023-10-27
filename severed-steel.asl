@@ -13,11 +13,11 @@ state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards epic dx11") {
     bool isOnMainMenu: 0x5D52E90, 0x30, 0x60, 0x560, 0x320;
 }
 
-// state("ThankYouVeryCool-Win64-Shipping", "firefight2 1.0 steam dx11") {
-//     // float levelTimer: 0x05B0F540, 0x118, 0xB54;
-//     float fullTimer: 0x5B19140, 0x118, 0xB58;
-//     bool isOnMainMenu: 0x059C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
-// }
+state("ThankYouVeryCool-Win64-Shipping", "firefight2 steam dx11 patch 1") {
+    // float levelTimer: 0x5B19140, 0x118, 0xB64;
+    float fullTimer: 0x5B19140, 0x118, 0xB68;
+    bool isOnMainMenu: 0x59D1AE0, 0x2190, 0x0, 0xEA0, 0x27C;
+}
 
 startup
 {
@@ -89,6 +89,7 @@ startup
 
 init
 {
+    print("Base address: " + (long)modules.First().BaseAddress);
     switch ((long)modules.First().BaseAddress) {
         case 0x7FF70E3D0000:
             version = "oldleaderboards steam dx11";
@@ -98,10 +99,10 @@ init
             version = "oldleaderboards epic dx11";
             vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
             break;
-        // case 0x7FF610F50000:
-        //     version = "firefight2 steam 1.0 dx11";
-        //     vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
-        //     break;
+        case 0x7FF610F50000:
+            version = "firefight2 steam dx11 patch 1";
+            vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
+            break;
         default:
             MessageBox.Show(
                 "Unsupported version of the game! If you're on GOG, sorry, I don't have it.\n" +
