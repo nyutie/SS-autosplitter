@@ -23,12 +23,14 @@ startup
 {
     if(timer.CurrentTimingMethod == TimingMethod.RealTime) // copied this from somewhere lmao
     {
-        var timingMessage = MessageBox.Show(
+        var timingMessage = MessageBox.Show
+        (
             "This game uses Game Time (time without loads) as the main timing method.\n"+
             "LiveSplit is currently set to show Real Time (time INCLUDING loads).\n"+
             "Would you like the timing method to be set to Game Time for you?",
             vars.aslName+" | LiveSplit",
-            MessageBoxButtons.YesNo,MessageBoxIcon.Question
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
         );
         if (timingMessage == DialogResult.Yes) timer.CurrentTimingMethod = TimingMethod.GameTime;
 	}
@@ -89,7 +91,6 @@ startup
 
 init
 {
-    print("Base address: " + (long)modules.First().BaseAddress);
     switch ((long)modules.First().BaseAddress) {
         case 0x7FF70E3D0000:
             version = "oldleaderboards steam";
@@ -104,7 +105,8 @@ init
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
-            MessageBox.Show(
+            MessageBox.Show
+            (
                 "Unsupported version of the game! If you're on GOG, sorry, I don't have it.\n" +
                 "If you're on Steam/Epic, I'm probably already working on the update!\n\n" +
                 "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.",
@@ -118,7 +120,9 @@ init
 
 update
 {
-    if (version == "") { return false; } // stops update
+    if (version == "") {
+        return false; // stops update
+    }
     IntPtr resolvedSavePath = IntPtr.Zero;
     vars.SaveOffsetPath.DerefOffsets(game, out resolvedSavePath);
     vars.SaveOffset = resolvedSavePath;
