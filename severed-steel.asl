@@ -123,14 +123,14 @@ update
     if (version == "") {
         return false; // stops update
     }
-    
+
     IntPtr resolvedSavePath = IntPtr.Zero;
     vars.SaveOffsetPath.DerefOffsets(game, out resolvedSavePath);
     vars.SaveOffset = resolvedSavePath;
 
     IntPtr saveOffset = vars.SaveOffset;
-    int campaignLevelReferenceStringLength = game.ReadValue<int>(saveOffset + 130);
-    vars.campaignLevelReferenceString = game.ReadString(saveOffset + 130 + 4, campaignLevelReferenceStringLength);
+    int campaignLevelReferenceStringLength = game.ReadValue<int>(saveOffset + 0x82);
+    vars.campaignLevelReferenceString = game.ReadString(saveOffset + 0x82 + 0x4, campaignLevelReferenceStringLength);
 }
 
 start
