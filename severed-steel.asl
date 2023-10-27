@@ -123,6 +123,7 @@ update
     if (version == "") {
         return false; // stops update
     }
+    
     IntPtr resolvedSavePath = IntPtr.Zero;
     vars.SaveOffsetPath.DerefOffsets(game, out resolvedSavePath);
     vars.SaveOffset = resolvedSavePath;
