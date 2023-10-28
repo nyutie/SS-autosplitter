@@ -11,7 +11,7 @@
     <Region>
     </Region>
     <Variables>
-      <Variable name="Difficulty">Molten Steel</Variable>
+      <Variable name="Difficulty">Any Steel</Variable>
       <Variable name="Any% Patch">Jan 1+</Variable>
     </Variables>
   </Metadata>
@@ -34,6 +34,10 @@
       <RealTime>00:23:51.7539407</RealTime>
       <GameTime>00:10:32.8815177</GameTime>
     </Attempt>
+    <Attempt id="14" started="10/28/2023 16:31:15" isStartedSynced="True" ended="10/28/2023 16:44:42" isEndedSynced="True" />
+    <Attempt id="15" started="10/28/2023 16:44:48" isStartedSynced="True" ended="10/28/2023 16:53:26" isEndedSynced="True" />
+    <Attempt id="16" started="10/28/2023 16:53:29" isStartedSynced="True" ended="10/28/2023 16:53:59" isEndedSynced="True" />
+    <Attempt id="17" started="10/28/2023 16:54:04" isStartedSynced="True" ended="10/28/2023 16:57:52" isEndedSynced="True" />
   </AttemptHistory>
   <Segments>
     <Segment>
@@ -42,7 +46,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:08.9531282</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -51,7 +57,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:11.7530801</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -60,7 +68,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:06.7204934</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -69,7 +79,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:06.7388377</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -78,7 +90,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:04.8958425</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -87,7 +101,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:08.1633217</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -96,7 +112,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:10.4000130</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -105,7 +123,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:10.1818993</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -114,7 +134,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:36.9315615</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -123,7 +145,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:14.7032146</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -132,7 +156,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:16.1008591</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -141,7 +167,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:23.1846083</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -150,7 +178,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:09.5720568</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -159,7 +189,9 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:06.8392177</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
@@ -168,11 +200,13 @@
       <SplitTimes>
         <SplitTime name="Personal Best" />
       </SplitTimes>
-      <BestSegmentTime />
+      <BestSegmentTime>
+        <RealTime>00:00:21.6806147</RealTime>
+      </BestSegmentTime>
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>-Cleave</Name>
+      <Name>-Normalized Emptiness</Name>
       <Icon><![CDATA[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]]></Icon>
       <SplitTimes>
         <SplitTime name="Personal Best" />
