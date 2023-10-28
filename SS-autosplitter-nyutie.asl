@@ -152,7 +152,7 @@ split
         vars.CurrentMapIndex = nowCurrentMapIndex;
         return true;
     }
-    else if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == 0.0f) // last map
+    else if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == 0f) // last map
     {
         return true;
     }
