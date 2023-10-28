@@ -91,16 +91,16 @@ startup
 
 init
 {
-    switch ((long)modules.First().BaseAddress) {
-        case 0x7FF70E3D0000:
+    switch ((long)modules.First().ModuleMemorySize) {
+        case 0x605D000:
             version = "oldleaderboards steam";
             vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
             break;
-        case 0x7FF783760000:
+        case 0x6380000:
             version = "oldleaderboards epic";
             vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
             break;
-        case 0x7FF610F50000:
+        case 0x60B0000:
             version = "firefight2 steam patch 1";
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
             break;
@@ -109,7 +109,9 @@ init
             (
                 "Unsupported version of the game! If you're on GOG, sorry, I don't have it.\n" +
                 "If you're on Steam/Epic, I'm probably already working on the update!\n\n" +
-                "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.",
+                "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.\n\n" +
+                "modules.First().BaseAddress: 0x" + modules.First().BaseAddress.ToString("X") + "\n" + 
+                "modules.first().ModuleMemorySize: 0x" + modules.First().ModuleMemorySize.ToString("X") + "\n",
                 "SS-autosplitter", // caption
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
