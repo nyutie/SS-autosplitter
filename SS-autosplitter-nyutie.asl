@@ -162,7 +162,6 @@ reset
 {
     if (current.isOnMainMenu)
     {
-        vars.CurrentMapIndex = -2;
         return true;
     }
 }
@@ -179,4 +178,9 @@ isLoading
 gameTime
 {
     return TimeSpan.FromSeconds(current.fullTimer != 0f ? current.fullTimer : old.fullTimer);
+}
+
+onReset
+{
+    vars.CurrentMapIndex = -2;
 }
