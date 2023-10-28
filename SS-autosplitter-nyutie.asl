@@ -152,7 +152,7 @@ split
         vars.CurrentMapIndex = nowCurrentMapIndex;
         return true;
     }
-    else if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == old.fullTimer) // last map
+    else if (nowCurrentMapIndex == vars.MapReferences.Count && current.fullTimer == 0.0f) // last map
     {
         return true;
     }
@@ -178,5 +178,5 @@ isLoading
 
 gameTime
 {
-    return TimeSpan.FromSeconds(current.fullTimer);
+    return TimeSpan.FromSeconds(current.fullTimer != 0f ? current.fullTimer : old.fullTimer);
 }
