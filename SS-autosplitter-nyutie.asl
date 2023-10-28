@@ -117,6 +117,7 @@ init
             return;
     }
 
+    timer.IsGameTimePaused = false;
     vars.CurrentMapIndex = -2;
 }
 
@@ -183,4 +184,9 @@ gameTime
 onReset
 {
     vars.CurrentMapIndex = -2;
+}
+
+exit
+{
+    timer.IsGameTimePaused = true;
 }
