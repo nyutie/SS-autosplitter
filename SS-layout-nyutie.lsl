@@ -2,7 +2,7 @@
 <Layout version="1.6.1">
   <Mode>Vertical</Mode>
   <X>-514</X>
-  <Y>237</Y>
+  <Y>236</Y>
   <VerticalWidth>380</VerticalWidth>
   <VerticalHeight>470</VerticalHeight>
   <HorizontalWidth>-1</HorizontalWidth>
@@ -184,7 +184,7 @@
         <BackgroundColor>00FFFFFF</BackgroundColor>
         <BackgroundColor2>00FFFFFF</BackgroundColor2>
         <BackgroundGradient>Plain</BackgroundGradient>
-        <DeltaAccuracy>Tenths</DeltaAccuracy>
+        <DeltaAccuracy>Hundredths</DeltaAccuracy>
         <DropDecimals>True</DropDecimals>
         <Comparison>Current Comparison</Comparison>
         <Display2Rows>False</Display2Rows>
@@ -200,7 +200,7 @@
         <OverrideTextColor>False</OverrideTextColor>
         <TimeColor>FFFFFFFF</TimeColor>
         <OverrideTimeColor>False</OverrideTimeColor>
-        <Accuracy>Seconds</Accuracy>
+        <Accuracy>Hundredths</Accuracy>
         <BackgroundColor>00FFFFFF</BackgroundColor>
         <BackgroundColor2>00FFFFFF</BackgroundColor2>
         <BackgroundGradient>Plain</BackgroundGradient>
@@ -216,7 +216,7 @@
         <OverrideTextColor>False</OverrideTextColor>
         <TimeColor>FFFFFFFF</TimeColor>
         <OverrideTimeColor>False</OverrideTimeColor>
-        <Accuracy>Seconds</Accuracy>
+        <Accuracy>Hundredths</Accuracy>
         <BackgroundColor>00FFFFFF</BackgroundColor>
         <BackgroundColor2>00FFFFFF</BackgroundColor2>
         <BackgroundGradient>Plain</BackgroundGradient>
