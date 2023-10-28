@@ -1,6 +1,6 @@
 # SS-autosplitter by nyutie
 
-## Features
+## Features:
 
 - auto splits
 
@@ -8,7 +8,7 @@
 
 - use game time
 
-## Works with
+## Works with:
 
 Currently only works with steam/epic games versions. Works with any dx version.
 
