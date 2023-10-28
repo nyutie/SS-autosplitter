@@ -132,12 +132,12 @@ update
 
     IntPtr saveOffset = vars.SaveOffset;
     int campaignLevelReferenceStringLength = game.ReadValue<int>(saveOffset + 0x82);
-    vars.campaignLevelReferenceString = game.ReadString(saveOffset + 0x82 + 0x4, campaignLevelReferenceStringLength);
+    vars.CampaignLevelReferenceString = game.ReadString(saveOffset + 0x82 + 0x4, campaignLevelReferenceStringLength);
 }
 
 start
 {
-    if (!current.isOnMainMenu && vars.campaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer < 0.1f) // we check if current timer < 0.1s instead of 0s, because it can happen that when we check the timer has already gone up from 0s.
+    if (!current.isOnMainMenu && vars.CampaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer < 0.1f) // we check if current timer < 0.1s instead of 0s, because it can happen that when we check the timer has already gone up from 0s.
     {
         vars.CurrentMapIndex = 0;
         return true;
@@ -146,7 +146,7 @@ start
 
 split
 {
-    int nowCurrentMapIndex = vars.MapReferences.IndexOf(vars.campaignLevelReferenceString);
+    int nowCurrentMapIndex = vars.MapReferences.IndexOf(vars.CampaignLevelReferenceString);
     if (nowCurrentMapIndex == vars.CurrentMapIndex + 1)
     {
         vars.CurrentMapIndex = nowCurrentMapIndex;
