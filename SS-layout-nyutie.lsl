@@ -158,7 +158,7 @@
       <Path>LiveSplit.ScriptableAutoSplit.dll</Path>
       <Settings>
         <Version>1.5</Version>
-        <ScriptPath>G:\GitHub\SS-autosplitter\severed-steel.asl</ScriptPath>
+        <ScriptPath>G:\GitHub\SS-autosplitter\SS-autosplitter-nyutie.asl</ScriptPath>
         <Start>True</Start>
         <Reset>True</Reset>
         <Split>True</Split>
