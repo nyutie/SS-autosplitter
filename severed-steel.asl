@@ -85,8 +85,6 @@ startup
         "/Game/Campaign/Cage/CDA_Cage.CDA_Cage_C",
         "/Game/Campaign/Escapism/CDA_Escapism.CDA_Escapism_C"
     };
-
-    vars.CurrentMapIndex = -2;
 }
 
 init
@@ -118,6 +116,8 @@ init
             );
             return;
     }
+
+    vars.CurrentMapIndex = -2;
 }
 
 update
