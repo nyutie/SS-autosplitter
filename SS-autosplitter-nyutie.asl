@@ -33,7 +33,7 @@ startup
             MessageBoxIcon.Question
         );
         if (timingMessage == DialogResult.Yes) timer.CurrentTimingMethod = TimingMethod.GameTime;
-	}
+    }
 
     vars.MapReferences = new List<string>()
     {
