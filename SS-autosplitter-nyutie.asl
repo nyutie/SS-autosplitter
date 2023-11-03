@@ -19,6 +19,13 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.0") {
     bool isOnMainMenu: 0x59D1AE0, 0x2190, 0x0, 0xEA0, 0x27C;
 }
 
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
+    // float levelTimer: 0x5B1A2C0, 0x118, 0xB64;
+    float fullTimer: 0x5B1A2C0, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5940940, 0x18, 0x40, 0x0, 0x1D0, 0x38, 0xE0; // long ass pointer
+}
+
+
 startup
 {
     if(timer.CurrentTimingMethod == TimingMethod.RealTime) // copied this from somewhere lmao
@@ -101,6 +108,10 @@ init
         case 0x60B0000:
             version = "steam patch 5.0";
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case 0x60B2000:
+            version = "steam patch 5.1";
+            vars.SaveOffsetPath = new DeepPointer(0x5B15EF8, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
             MessageBox.Show
