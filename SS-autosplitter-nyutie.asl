@@ -1,23 +1,30 @@
 // autosplitter and layout by nyutie
 // first time doin any of this :3_:
 
-state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards steam") {
+state("ThankYouVeryCool-Win64-Shipping", "steam oldleaderboards") {
     // float levelTimer: 0x5B0F540, 0x118, 0xB54;
     float fullTimer: 0x5B0F540, 0x118, 0xB58;
     bool isOnMainMenu: 0x59C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
 }
 
-state("ThankYouVeryCool-Win64-Shipping", "oldleaderboards epic") {
+state("ThankYouVeryCool-Win64-Shipping", "epic oldleaderboards") {
     // float levelTimer: 0x5DC0380, 0x118, 0xB54;
     float fullTimer: 0x5DC0380, 0x118, 0xB58;
     bool isOnMainMenu: 0x5D52E90, 0x30, 0x60, 0x560, 0x320;
 }
 
-state("ThankYouVeryCool-Win64-Shipping", "firefight2 steam patch 1") {
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.0") {
     // float levelTimer: 0x5B19140, 0x118, 0xB64;
     float fullTimer: 0x5B19140, 0x118, 0xB68;
     bool isOnMainMenu: 0x59D1AE0, 0x2190, 0x0, 0xEA0, 0x27C;
 }
+
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
+    // float levelTimer: 0x5B1A2C0, 0x118, 0xB64;
+    float fullTimer: 0x5B1A2C0, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5940940, 0x18, 0x40, 0x0, 0x1D0, 0x38, 0xE0; // long ass pointer
+}
+
 
 startup
 {
@@ -33,7 +40,7 @@ startup
             MessageBoxIcon.Question
         );
         if (timingMessage == DialogResult.Yes) timer.CurrentTimingMethod = TimingMethod.GameTime;
-	}
+    }
 
     vars.MapReferences = new List<string>()
     {
@@ -91,16 +98,20 @@ init
 {
     switch ((long)modules.First().ModuleMemorySize) {
         case 0x605D000:
-            version = "oldleaderboards steam";
+            version = "steam oldleaderboards";
             vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
             break;
         case 0x6380000:
-            version = "oldleaderboards epic";
+            version = "epic oldleaderboards";
             vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
             break;
         case 0x60B0000:
-            version = "firefight2 steam patch 1";
+            version = "steam patch 5.0";
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case 0x60B2000:
+            version = "steam patch 5.1";
+            vars.SaveOffsetPath = new DeepPointer(0x5B15EF8, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
             MessageBox.Show
