@@ -148,7 +148,7 @@ update
 
 start
 {
-    if (!current.isOnMainMenu && vars.CampaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer < 0.1f) // we check if current timer < 0.1s instead of 0s, because it can happen that when we check the timer has already gone up from 0s.
+    if (!current.isOnMainMenu && vars.CampaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer > 0f)
     {
         vars.CurrentMapIndex = 0;
         return true;
