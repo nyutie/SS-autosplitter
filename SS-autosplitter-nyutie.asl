@@ -25,6 +25,11 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
     bool isOnMainMenu: 0x5940940, 0x18, 0x40, 0x0, 0x1D0, 0x38, 0xE0; // long ass pointer
 }
 
+state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
+    // float levelTimer: 0x5DCB0C0, 0x118, 0xB64;
+    float fullTimer: 0x5DCB0C0, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5C83A60, 0x8D0, 0x0, 0x1680, 0xD8;
+}
 
 startup
 {
@@ -112,6 +117,10 @@ init
         case 0x60B2000:
             version = "steam patch 5.1";
             vars.SaveOffsetPath = new DeepPointer(0x5B15EF8, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case 0x638C000:
+            version = "epic patch 5.1";
+            vars.SaveOffsetPath = new DeepPointer(0x5DC6CF8, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
             MessageBox.Show
