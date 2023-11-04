@@ -149,7 +149,7 @@ update
 
 start
 {
-    if (!current.isOnMainMenu && vars.CampaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer > 0f && old.fullTimer == 0f)
+    if (!current.isOnMainMenu && vars.CampaignLevelReferenceString == vars.MapReferences[0] && current.fullTimer > 0f)
     {
         vars.CurrentMapIndex = 0;
         return true;
