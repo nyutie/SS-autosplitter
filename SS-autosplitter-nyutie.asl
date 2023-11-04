@@ -22,7 +22,7 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.0") {
 state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
     // float levelTimer: 0x5B1A2C0, 0x118, 0xB64;
     float fullTimer: 0x5B1A2C0, 0x118, 0xB68;
-    bool isOnMainMenu: 0x5940940, 0x18, 0x40, 0x0, 0x1D0, 0x38, 0xE0; // long ass pointer
+    bool isOnMainMenu: 0x59D2C60, 0x2190, 0x0, 0xEA0, 0x27C; // better pointer. is actually 8 bytes, makes it easier to find, gonna search for 8 bytes in the future
 }
 
 state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
