@@ -172,7 +172,7 @@ split
 
 reset
 {
-    if (current.isOnMainMenu)
+    if (current.isOnMainMenu || old.fullTimer > current.fullTimer)
     {
         return true;
     }
