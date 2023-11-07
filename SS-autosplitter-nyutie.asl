@@ -40,7 +40,7 @@ startup
             "This game uses Game Time (time without loads) as the main timing method.\n"+
             "LiveSplit is currently set to show Real Time (time INCLUDING loads).\n"+
             "Would you like the timing method to be set to Game Time for you?",
-            vars.aslName+" | LiveSplit",
+            "SS-autosplitter | LiveSplit",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question
         );
@@ -130,7 +130,7 @@ init
                 "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.\n\n" +
                 "modules.First().BaseAddress: 0x" + modules.First().BaseAddress.ToString("X") + "\n" + 
                 "modules.first().ModuleMemorySize: 0x" + modules.First().ModuleMemorySize.ToString("X") + "\n",
-                "SS-autosplitter", // caption
+                "SS-autosplitter | LiveSplit",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
             );
