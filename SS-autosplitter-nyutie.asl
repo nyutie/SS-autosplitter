@@ -1,16 +1,16 @@
 // autosplitter and layout by nyutie
 // first time doin any of this :3_:
 
+state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
+    // float levelTimer: 0x5DCB0C0, 0x118, 0xB64;
+    float fullTimer: 0x5DCB0C0, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5C83A60, 0x8D0, 0x0, 0x1680, 0xD8;
+}
+
 state("ThankYouVeryCool-Win64-Shipping", "steam oldleaderboards") {
     // float levelTimer: 0x5B0F540, 0x118, 0xB54;
     float fullTimer: 0x5B0F540, 0x118, 0xB58;
     bool isOnMainMenu: 0x59C7EE0, 0x8D0, 0x0, 0x16B0, 0xD8;
-}
-
-state("ThankYouVeryCool-Win64-Shipping", "epic oldleaderboards") {
-    // float levelTimer: 0x5DC0380, 0x118, 0xB54;
-    float fullTimer: 0x5DC0380, 0x118, 0xB58;
-    bool isOnMainMenu: 0x5D52E90, 0x30, 0x60, 0x560, 0x320;
 }
 
 state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.0") {
@@ -24,11 +24,10 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
     float fullTimer: 0x5B1A2C0, 0x118, 0xB68;
     bool isOnMainMenu: 0x59D2C60, 0x2190, 0x0, 0xEA0, 0x27C; // better pointer. is actually 8 bytes, makes it easier to find, gonna search for 8 bytes in the future
 }
-
-state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
-    // float levelTimer: 0x5DCB0C0, 0x118, 0xB64;
-    float fullTimer: 0x5DCB0C0, 0x118, 0xB68;
-    bool isOnMainMenu: 0x5C83A60, 0x8D0, 0x0, 0x1680, 0xD8;
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.2") {
+    // float levelTimer: 0x5B1A300, 0x118, 0xB64;
+    float fullTimer: 0x5B1A300, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5570F00, 0x12C0, 0x360, 0x350, 0x27C; 
 }
 
 startup
@@ -101,26 +100,33 @@ startup
 
 init
 {
-    switch ((long)modules.First().ModuleMemorySize) {
-        case 0x605D000:
+    string MD5Hash;
+    using (var md5 = System.Security.Cryptography.MD5.Create())
+    using (var s = File.Open(modules.First().FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+    MD5Hash = md5.ComputeHash(s).Select(x => x.ToString("X2")).Aggregate((a, b) => a + b);
+    print("Hash is: " + MD5Hash);
+
+    switch (MD5Hash)
+    {
+        case "06AC8707AD25564ABA645B2FBCFE6D46":
+            version = "epic patch 5.1";
+            vars.SaveOffsetPath = new DeepPointer(0x5DC6CF8, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case "90CD08A8C58714C6A35EEBE954212C19":
             version = "steam oldleaderboards";
             vars.SaveOffsetPath = new DeepPointer(0x5B0B178, 0x130, 0x38, 0x70, 0x459);
             break;
-        case 0x6380000:
-            version = "epic oldleaderboards";
-            vars.SaveOffsetPath = new DeepPointer(0x5DBBFB8, 0x130, 0x38, 0x70, 0x459);
-            break;
-        case 0x60B0000:
+        case "65EA646701B96E86BD38254C7AB606EF":
             version = "steam patch 5.0";
             vars.SaveOffsetPath = new DeepPointer(0x5B14D78, 0x130, 0x38, 0x70, 0x459);
             break;
-        case 0x60B2000:
+        case "A8C57AD035ED26B6E1DCED0499EBFA22":
             version = "steam patch 5.1";
             vars.SaveOffsetPath = new DeepPointer(0x5B15EF8, 0x130, 0x38, 0x70, 0x459);
             break;
-        case 0x638C000:
-            version = "epic patch 5.1";
-            vars.SaveOffsetPath = new DeepPointer(0x5DC6CF8, 0x130, 0x38, 0x70, 0x459);
+        case "76EAB92EF3754360BAB05B7D535C6956":
+            version = "steam patch 5.2";
+            vars.SaveOffsetPath = new DeepPointer(0x5B15F38, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
             MessageBox.Show
@@ -128,13 +134,14 @@ init
                 "Unsupported version of the game! If you're on GOG, sorry, I don't have it.\n" +
                 "If you're on Steam/Epic, I'm probably already working on the update!\n\n" +
                 "If you have any questions you can find me on the official Greylock Discord server, or the official SS/EPN speedrun Discord server.\n\n" +
-                "modules.First().BaseAddress: 0x" + modules.First().BaseAddress.ToString("X") + "\n" + 
-                "modules.first().ModuleMemorySize: 0x" + modules.First().ModuleMemorySize.ToString("X") + "\n",
+                "modules.first().ModuleMemorySize: 0x" + modules.First().ModuleMemorySize.ToString("X") + "\n" +
+                "new FileInfo(modules.First().FileName).Length): 0x" + new FileInfo(modules.First().FileName).Length.ToString("X") + "\n" +
+                "MD5Hash: " + MD5Hash,
                 "SS-autosplitter | LiveSplit",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
             );
-            return;
+            return false;
     }
 
     timer.IsGameTimePaused = false;
