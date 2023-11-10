@@ -1,7 +1,7 @@
 // autosplitter and layout by nyutie
 // first time doin any of this :3_:
 
-state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
+state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.2") {
     // float levelTimer: 0x5DCAF40, 0x118, 0xB64;
     float fullTimer: 0x5DCAF40, 0x118, 0xB68;
     bool isOnMainMenu: 0x5C838E0, 0x8F0, 0xA0, 0x3E0, 0x320;
