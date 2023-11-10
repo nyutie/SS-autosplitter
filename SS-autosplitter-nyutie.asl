@@ -27,7 +27,7 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
 state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.2") {
     // float levelTimer: 0x5B1A300, 0x118, 0xB64;
     float fullTimer: 0x5B1A300, 0x118, 0xB68;
-    bool isOnMainMenu: 0x5570F00, 0x12C0, 0x360, 0x350, 0x27C; 
+    bool isOnMainMenu: 0x5570F00, 0x12C0, 0x360, 0x350, 0x27C;
 }
 
 startup
