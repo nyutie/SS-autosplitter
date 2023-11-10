@@ -2,9 +2,9 @@
 // first time doin any of this :3_:
 
 state("ThankYouVeryCool-Win64-Shipping", "epic patch 5.1") {
-    // float levelTimer: 0x5DCB0C0, 0x118, 0xB64;
-    float fullTimer: 0x5DCB0C0, 0x118, 0xB68;
-    bool isOnMainMenu: 0x5C83A60, 0x8D0, 0x0, 0x1680, 0xD8;
+    // float levelTimer: 0x5DCAF40, 0x118, 0xB64;
+    float fullTimer: 0x5DCAF40, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5C838E0, 0x8F0, 0xA0, 0x3E0, 0x320;
 }
 
 state("ThankYouVeryCool-Win64-Shipping", "steam oldleaderboards") {
@@ -107,9 +107,9 @@ init
 
     switch (MD5Hash)
     {
-        case "06AC8707AD25564ABA645B2FBCFE6D46":
-            version = "epic patch 5.1";
-            vars.SaveOffsetPath = new DeepPointer(0x5DC6CF8, 0x130, 0x38, 0x70, 0x459);
+        case "37C6CE6B3C0C0399424250CC7EF3457F":
+            version = "epic patch 5.2";
+            vars.SaveOffsetPath = new DeepPointer(0x5DC6B78, 0x130, 0x38, 0x70, 0x459);
             break;
         case "90CD08A8C58714C6A35EEBE954212C19":
             version = "steam oldleaderboards";
