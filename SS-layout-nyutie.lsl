@@ -75,7 +75,7 @@
         <ShowThinSeparators>True</ShowThinSeparators>
         <AlwaysShowLastSplit>True</AlwaysShowLastSplit>
         <SplitWidth>20</SplitWidth>
-        <SplitTimesAccuracy>Tenths</SplitTimesAccuracy>
+        <SplitTimesAccuracy>Hundredths</SplitTimesAccuracy>
         <BeforeNamesColor>FFFFFFFF</BeforeNamesColor>
         <CurrentNamesColor>FFFFFFFF</CurrentNamesColor>
         <AfterNamesColor>FFFFFFFF</AfterNamesColor>
@@ -115,7 +115,7 @@
         <OverrideHeaderColor>False</OverrideHeaderColor>
         <HeaderText>True</HeaderText>
         <HeaderTimes>True</HeaderTimes>
-        <HeaderAccuracy>Tenths</HeaderAccuracy>
+        <HeaderAccuracy>Hundredths</HeaderAccuracy>
         <SectionTimer>True</SectionTimer>
         <SectionTimerGradient>True</SectionTimerGradient>
         <SectionTimerAccuracy>Hundredths</SectionTimerAccuracy>
@@ -133,15 +133,15 @@
             <Version>1.5</Version>
             <Name>+/-</Name>
             <Type>SegmentDeltaorSegmentTime</Type>
-            <Comparison>Current Comparison</Comparison>
-            <TimingMethod>Game Time</TimingMethod>
+            <Comparison>Personal Best</Comparison>
+            <TimingMethod>Current Timing Method</TimingMethod>
           </Settings>
           <Settings>
             <Version>1.5</Version>
             <Name>Time</Name>
             <Type>SplitTime</Type>
             <Comparison>Current Comparison</Comparison>
-            <TimingMethod>Real Time</TimingMethod>
+            <TimingMethod>Current Timing Method</TimingMethod>
           </Settings>
         </Columns>
       </Settings>
