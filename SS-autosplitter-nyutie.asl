@@ -24,10 +24,17 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.1") {
     float fullTimer: 0x5B1A2C0, 0x118, 0xB68;
     bool isOnMainMenu: 0x59D2C60, 0x2190, 0x0, 0xEA0, 0x27C; // better pointer. is actually 8 bytes, makes it easier to find, gonna search for 8 bytes in the future
 }
+
 state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.2") {
     // float levelTimer: 0x5B1A300, 0x118, 0xB64;
     float fullTimer: 0x5B1A300, 0x118, 0xB68;
     bool isOnMainMenu: 0x59D2CA0, 0x8F0, 0xA0, 0x3E0, 0x320;
+}
+
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.3") {
+    // float levelTimer: 0x5B28C00, 0x118, 0xB64;
+    float fullTimer: 0x5B28C00, 0x118, 0xB68;
+    bool isOnMainMenu: 0x59E15A0, 0xF70, 0xA0, 0x3E0, 0x320;
 }
 
 startup
@@ -126,6 +133,10 @@ init
         case "76EAB92EF3754360BAB05B7D535C6956":
             version = "steam patch 5.2";
             vars.SaveOffsetPath = new DeepPointer(0x5B15F38, 0x130, 0x38, 0x70, 0x459);
+            break;
+        case "5CB50DA54A0E6718DDE1E1767261E1E1":
+            version = "steam patch 5.3";
+            vars.SaveOffsetPath = new DeepPointer(0x5B24838, 0x130, 0x38, 0x70, 0x459);
             break;
         default:
             MessageBox.Show
