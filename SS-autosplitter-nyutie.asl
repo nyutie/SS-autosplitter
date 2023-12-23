@@ -49,6 +49,12 @@ state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.3.2") {
     bool isOnMainMenu: 0x59D6E20, 0x8F0, 0xA0, 0x3E0, 0x320;
 }
 
+state("ThankYouVeryCool-Win64-Shipping", "steam patch 5.4") {
+    // float levelTimer: 0x5B1A0B8, 0x118, 0xB64;
+    float fullTimer: 0x5B1A0B8, 0x118, 0xB68;
+    bool isOnMainMenu: 0x5B16D10, 0xE10, 0xE60, 0x320; // couldn't find old value. this is shorter though
+}
+
 startup
 {
     if(timer.CurrentTimingMethod == TimingMethod.RealTime) // copied this from somewhere lmao
@@ -158,6 +164,9 @@ init
             version = "steam patch 5.3.2";
             vars.SaveOffsetPath = new DeepPointer(0x5B1A0B8, 0x130, 0x38, 0x70, 0x459);
             break;
+        case "D6B612D7A26C563461AAAA9DB064E822":
+            version = "steam patch 5.4";
+            vars.SaveOffsetPath = new DeepPointer(0x5B25978, 0x130, 0x38, 0x70, 0x459);
         default:
             MessageBox.Show
             (
